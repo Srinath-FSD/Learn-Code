@@ -1,0 +1,23 @@
+.nav{
+    background-color: black;
+    color: red;
+}
+.logo{
+    display: inline-block;
+}
+.nav-link{
+    display: inline-block;
+}
+.nav-link a{
+    text-decoration: none;
+    color: red;
+}
+.content {
+    background-color: aquamarine;
+    color: black ;
+    text-align: center;
+    padding: 65px;
+    margin: auto;
+    width: 50%;
+    border: 30px solid gold;
+}

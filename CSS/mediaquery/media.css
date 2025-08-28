@@ -1,0 +1,78 @@
+body{
+    background-color: aqua;
+    height: 100vh;
+}
+.main{
+
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+     gap: 10px;
+
+}
+.child1{
+    background-color: black;
+    color: white;
+    padding: 20px;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+
+}
+.child2{
+    background-color: black;
+    color: white;
+    padding: 20px;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+
+}
+.child3{
+    background-color: black;
+    color: white;
+    padding: 20px;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+}
+
+@media (max-width:1000px){
+    .child1{
+        background-color: brown;
+    }
+    .child2{
+        background-color: blue;
+    }
+    .child3{
+        display: none;
+    }
+}
+
+@media(max-width:750px){
+    .child1{
+        background-color: blue;
+
+    }
+    .child2{
+        display: none;
+    }
+}
+
+@media(max-width:500px){
+    .child1{
+        background-color: white;
+        color: black;
+    }
+}
+
+
+@media(max-width:400px){
+    .child2{
+display: block;
+    }
+    .child3{
+        display: blockd;
+    }
+}
+    

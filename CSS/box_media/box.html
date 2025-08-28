@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box</title>
+    <style>
+        .div{
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            height: 100vh;
+
+            
+
+        }
+        .child{
+            
+            align-items: center;
+            background-color: rgb(233, 156, 14);
+            padding: 8px;
+            width: 200px;
+            height: 200px;
+        }
+        .childa{
+            
+            align-items: center;
+            background-color: rgb(0, 255, 60);
+            padding: 8px;
+            width: 200px;
+            height: 200px;
+        }
+        .childb{
+            
+            align-items: center;
+            background-color: rgb(255, 0, 0);
+            padding: 8px;
+            width: 200px;
+            height: 200px;
+        }
+
+
+
+        @media (max-width:1000px){
+            .child{
+                display:none;
+                /* flex-wrap: wrap; */
+            }
+    }
+            @media (max-width:786px){
+            .childa{
+                display:none;
+                /* flex-wrap: wrap; */
+            }
+    }
+            @media (max-width:600px){
+            .childb{
+                display:none;
+                /* flex-wrap: wrap; */
+            }
+    }
+
+
+
+    </style>
+</head>
+<body style="background-color: aqua;">
+    <head >
+    <div class="div">
+        <div class="child">
+          <p style="text-align: center;">box
+          </p>
+        </div>
+    
+       
+        <div class="childa">
+          <p style="text-align: center;">box
+          </p>
+        </div>
+
+
+        <div class="childb">
+          <p style="text-align: center;">box
+          </p>
+        </div>
+    </div>
+    
+    </head>
+</body>
+</html>
