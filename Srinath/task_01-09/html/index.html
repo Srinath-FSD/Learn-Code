@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form with Table</title>
+<style>
+    body {
+      
+        margin: 20px;
+        background: #f2f2f2;
+    }
+    h2 {
+        text-align: center;
+        color: #333;
+    }
+    form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    form input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    form button {
+        background: #28a745;
+        color: white;
+        border: none;
+        padding: 10px;
+        width: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    table {
+        width: 80%;
+        margin: auto;
+        border-collapse: collapse;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: center;
+    }
+    th {
+        background: #007BFF;
+        color: white;
+    }
+</style>
+</head>
+<body>
+<h2>User Details</h2>
+<form id="userForm">
+    <input type="text" id="name" placeholder="Enter Name" required>
+    <input type="email" id="email" placeholder="Enter Email" required>
+    <button type="button" onclick="addData()">Add</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+    </tbody>
+</table>
+
+<script>
+function addData() {
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    if(name && email) {
+        let tableBody = document.getElementById('tableBody');
+        let newRow = `<tr><td>${name}</td><td>${email}</td></tr>`;
+        tableBody.innerHTML += newRow;
+        document.getElementById('userForm').reset();
+    }
+}
+</script>
+</body>
+</html>
