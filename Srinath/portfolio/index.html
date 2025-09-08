@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- SEO -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Srinath - Full Stack Developer | Portfolio</title>
+    <meta name="description" content="Srinath is a passionate Full Stack Developer skilled in HTML, CSS, Bootstrap, JavaScript, Python, and GitHub. Explore projects, skills, and contact." />
+    <link rel="canonical" href="https://your-domain.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Srinath - Full Stack Developer | Portfolio" />
+    <meta property="og:description" content="Dark, modern portfolio showcasing skills, projects, education and contact details." />
+    <meta property="og:type" content="website" />
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <style>
+      :root{
+        --bg: hsl(220 23% 7%);
+        --card: hsl(220 20% 10%);
+        --text: hsl(210 40% 98%);
+        --muted: hsl(217 10% 64%);
+        --primary: hsl(217 91% 60%);
+        --secondary: hsl(270 91% 65%);
+        --border: hsl(220 13% 18%);
+      }
+      html{ scroll-behavior: smooth; }
+      body{
+        font-family: Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+      a{ color: var(--primary); }
+      a:hover{ color: hsl(217 91% 70%); }
+      .navbar{
+        transition: all .3s ease;
+        backdrop-filter: saturate(180%) blur(12px);
+      }
+      .navbar.scrolled{
+        background: rgba(17,24,39,.7) !important;
+        box-shadow: 0 6px 24px rgba(0,0,0,.25);
+        border-bottom: 1px solid var(--border);
+      }
+      .hero{
+        position: relative;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+      }
+      .hero .backdrop{
+        position:absolute; inset:0; opacity:.15;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+      }
+      .glass{
+        background: rgba(30,41,59,.6);
+        border: 1px solid rgba(148,163,184,.15);
+        border-radius: 1rem;
+        backdrop-filter: blur(16px);
+      }
+      .btn-primary{
+        --bs-btn-bg: var(--primary);
+        --bs-btn-border-color: var(--primary);
+        --bs-btn-hover-bg: hsl(217 91% 55%);
+        --bs-btn-hover-border-color: hsl(217 91% 55%);
+        --bs-btn-color: #0b1020;
+        font-weight: 700;
+      }
+      .btn-outline-primary{
+        --bs-btn-color: var(--primary);
+        --bs-btn-border-color: var(--primary);
+        --bs-btn-hover-bg: var(--primary);
+        --bs-btn-hover-border-color: var(--primary);
+        --bs-btn-hover-color: #0b1020;
+      }
+      .section-title{
+        font-weight: 800;
+        letter-spacing: .2px;
+      }
+      .tagline{ color: var(--muted); }
+      .skill-badge{
+        background: hsl(220 15% 12%);
+        color: var(--text);
+        border: 1px solid var(--border);
+        transition: transform .2s ease, background-color .2s ease, color .2s ease;
+      }
+      .skill-badge:hover{ transform: translateY(-2px); background: color-mix(in hsl, var(--primary) 12%, transparent); color: var(--text); }
+      .project-card{
+        border: 1px solid var(--border);
+        background: var(--card);
+        transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+      }
+      .project-card:hover{
+        transform: translateY(-6px);
+        box-shadow: 0 16px 40px rgba(0,0,0,.35);
+        border-color: color-mix(in hsl, var(--primary) 40%, var(--border));
+      }
+      .project-thumb{
+        height: 220px; object-fit: cover; border-radius: .75rem;
+      }
+      section{ scroll-margin-top: 90px; }
+      .footer{
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-transparent">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#home">
+          <span style="background:linear-gradient(90deg,var(--primary),var(--secondary)); -webkit-background-clip:text; background-clip:text; color:transparent;">Srinath</span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="nav" class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+              <a href="#contact" class="btn btn-primary btn-sm px-3">Hire Me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- Hero -->
+    <header id="home" class="hero">
+      <div class="backdrop"></div>
+      <div class="container position-relative">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-9">
+            <h1 class="display-4 fw-bold mb-3">
+              Hi, I'm <span style="background:linear-gradient(90deg,var(--primary),var(--secondary)); -webkit-background-clip:text; background-clip:text; color:transparent;">Srinath</span>
+            </h1>
+            <h2 class="h3 tagline mb-4">Full Stack Developer</h2>
+            <p class="lead tagline mb-5">
+              Passionate and detail-oriented full stack developer, always eager to build scalable, user-friendly web applications and explore new technologies.
+            </p>
+            <div class="d-flex flex-wrap gap-3 justify-content-center">
+              <a href="#contact" class="btn btn-primary btn-lg px-4">Get In Touch</a>
+              <a class="btn btn-outline-primary btn-lg px-4" href="https://github.com/Srinath-FSD" target="_blank" rel="noopener">
+                <i class="bi bi-github me-2"></i>GitHub
+              </a>
+              <a class="btn btn-outline-primary btn-lg px-4" href="https://www.linkedin.com/in/srinath-k-9aa0b437a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener">
+                <i class="bi bi-linkedin me-2"></i>LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title display-6">About <span style="color:var(--primary)">Me</span></h2>
+          <p class="tagline">Get to know more about who I am and what drives my passion for development</p>
+        </div>
+
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 text-center">
+            <div class="p-2 rounded-4" style="background:linear-gradient(135deg, color-mix(in hsl, var(--primary) 20%, transparent), color-mix(in hsl, var(--secondary) 20%, transparent));">
+              <img src="images/WhatsApp Image 2025-08-29 at 10.12.16_01a49a2e.jpg" alt="Srinath - Full Stack Developer" class="img-fluid rounded-4" />
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="glass p-4 p-lg-5">
+              <h3 class="fw-bold mb-3">Passionate Full Stack Developer</h3>
+              <p class="tagline fs-5">
+                I'm a detail-oriented full stack developer with a passion for creating
+                scalable and user-friendly web applications. My journey in technology
+                is driven by curiosity and a constant desire to learn and implement
+                new technologies.
+              </p>
+              <p class="tagline fs-6 mb-0">
+                Education: BCA – MGR Arts and Science College, Hosur.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title display-6">My <span style="color:var(--primary)">Skills</span></h2>
+          <p class="tagline">Technologies and tools I use to bring ideas to life</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="glass p-4 rounded-4 h-100">
+              <h5 class="fw-bold mb-3"><i class="bi bi-window-sidebar me-2"></i>Frontend</h5>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge rounded-pill skill-badge px-3 py-2">HTML</span>
+                <span class="badge rounded-pill skill-badge px-3 py-2">CSS</span>
+                <span class="badge rounded-pill skill-badge px-3 py-2">Bootstrap</span>
+                <span class="badge rounded-pill skill-badge px-3 py-2">JavaScript</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="glass p-4 rounded-4 h-100">
+              <h5 class="fw-bold mb-3"><i class="bi bi-hdd-network me-2"></i>Backend</h5>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge rounded-pill skill-badge px-3 py-2">Python</span>
+                <span class="badge rounded-pill skill-badge px-3 py-2">REST APIs</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="glass p-4 rounded-4">
+              <h5 class="fw-bold mb-3"><i class="bi bi-git me-2"></i>Tools & Version Control</h5>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge rounded-pill skill-badge px-3 py-2">GitHub</span>
+                <span class="badge rounded-pill skill-badge px-3 py-2">Git</span>
+                <span class="badge rounded-pill skill-badge px-3 py-2">VS Code</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title display-6">My <span style="color:var(--primary)">Projects</span></h2>
+          <p class="tagline">A showcase of my work and the solutions I've built</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Project 1 -->
+          <div class="col-md-6">
+            <div class="project-card rounded-4 p-3 h-100">
+              <img class="project-thumb w-100 mb-3" src="images/Screenshot 2025-08-30 081744.png" alt="OSGHS" />
+              <h5 class="fw-bold">Online Security Guards Hiring System</h5>
+              <p class="tagline">Full-stack app with auth, product catalog, cart and payments.</p>
+              <div class="d-flex flex-wrap gap-2 mb-3">
+                <span class="badge text-bg-dark border">HTML</span>
+                <span class="badge text-bg-dark border">CSS</span>
+                <span class="badge text-bg-dark border">JavaScript</span>
+                <span class="badge text-bg-dark border">Bootstrap</span>
+                <span class="badge text-bg-dark border">Python</span>
+              </div>
+              <div class="d-flex gap-2">
+                <a href="#" class="btn btn-outline-primary btn-sm"><i class="bi bi-github me-1"></i>Code</a>
+                <a href="#" class="btn btn-primary btn-sm"><i class="bi bi-box-arrow-up-right me-1"></i>Live Demo</a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 2 -->
+      
+          <!-- Project 3 -->
+         
+          <!-- Project 4 -->
+        
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title display-6">My <span style="color:var(--primary)">Education</span></h2>
+          <p class="tagline">Academic foundation that shaped my technical expertise</p>
+        </div>
+
+        <div class="glass p-4 p-lg-5 rounded-4">
+          <div class="d-flex flex-column flex-md-row gap-4 align-items-start">
+            <div class="flex-shrink-0">
+              <div class="rounded-4 d-flex align-items-center justify-content-center" style="width:80px;height:80px;background:linear-gradient(135deg,var(--primary),var(--secondary));">
+                <i class="bi bi-mortarboard text-dark fs-2"></i>
+              </div>
+            </div>
+            <div class="flex-grow-1">
+              <h3 class="h4 fw-bold mb-1">Bachelor of Computer Applications (BCA)</h3>
+              <h4 class="h5 fw-semibold" style="color:var(--primary)">MGR Arts and Science College</h4>
+              <p class="tagline mb-2"><i class="bi bi-geo-alt me-2"></i>Hosur, Tamil Nadu, India</p>
+              <p class="tagline"><i class="bi bi-calendar3 me-2"></i>2022 - 2025</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+       <section id="contact" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title display-6">Get In <span style="color:var(--primary)">Touch</span></h2>
+          <p class="tagline">Let's discuss how we can work together to bring your ideas to life</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="glass p-4 rounded-4 h-100">
+              <h3 class="h4 fw-bold mb-4">Contact Details</h3>
+              <div class="vstack gap-3">
+                <div class="d-flex align-items-center gap-3">
+                  <span class="btn btn-outline-primary btn-sm rounded-circle p-2"><i class="bi bi-envelope"></i></span>
+                  <div>
+                    <div class="fw-semibold">Email</div>
+                    <a href="mailto:srinath35fsd@gmail.com" class="tagline">srinath35fsd@gmail.com</a>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                  <span class="btn btn-outline-primary btn-sm rounded-circle p-2"><i class="bi bi-telephone"></i></span>
+                  <div>
+                    <div class="fw-semibold">Phone</div>
+                    <a href="tel:8056655187" class="tagline">+91 8056655187</a>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                  <span class="btn btn-outline-primary btn-sm rounded-circle p-2"><i class="bi bi-github"></i></span>
+                  <div>
+                    <div class="fw-semibold">GitHub</div>
+                    <a href="https://github.com/Srinath-FSD" target="_blank" rel="noopener" class="tagline">Srinath-FSD</a>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                  <span class="btn btn-outline-primary btn-sm rounded-circle p-2"><i class="bi bi-linkedin"></i></span>
+                  <div>
+                    <div class="fw-semibold">LinkedIn</div>
+                    <a href="https://linkedin.com/in/srinath-k" target="_blank" rel="noopener" class="tagline">Srinath K</a>
+                  </div>
+                </div>
+                <!-- Instagram -->
+                <div class="d-flex align-items-center gap-3">
+                  <span class="btn btn-outline-primary btn-sm rounded-circle p-2"><i class="bi bi-instagram"></i></span>
+                  <div>
+                    <div class="fw-semibold">Instagram</div>
+                    <a href="https://www.instagram.com/sri_perfectly_imperfect?igsh=MTZnNnc3OWk0cnd1dQ==" target="_blank" rel="noopener" class="tagline">@sri_perfectltly_imperfect</a>
+                  </div>
+                </div>
+                <!-- WhatsApp -->
+                <div class="d-flex align-items-center gap-3">
+                  <span class="btn btn-outline-primary btn-sm rounded-circle p-2"><i class="bi bi-whatsapp"></i></span>
+                  <div>
+                    <div class="fw-semibold">WhatsApp</div>
+                    <a href="https://wa.me/918056655187" target="_blank" rel="noopener" class="tagline">Chat on WhatsApp</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4">
+                <a href="mailto:srinath35fsd@gmail.com" class="btn btn-primary me-2"><i class="bi bi-send me-2"></i>Email Me</a>
+                <a href="https://linkedin.com/in/srinath-k" target="_blank" rel="noopener" class="btn btn-outline-primary"><i class="bi bi-linkedin me-2"></i>Connect</a>
+              </div>
+            </div>
+          </div>
+    
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+      <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <p class="mb-2 mb-md-0">© <span id="year"></span> Srinath. All rights reserved.</p>
+        <p class="mb-0">Built with Bootstrap</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Navbar shadow on scroll
+      const nav = document.querySelector('.navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+      });
+
+      // Collapse mobile menu on nav link click
+      document.querySelectorAll('.navbar .nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          const collapse = document.querySelector('#nav');
+          if (collapse && collapse.classList.contains('show')) {
+            new bootstrap.Collapse(collapse).hide();
+          }
+        });
+      });
+
+      // Year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>  
